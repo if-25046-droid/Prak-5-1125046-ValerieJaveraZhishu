@@ -3,12 +3,13 @@ package MODEL;
 public abstract class SmartDevice {
     String id;
     String nama;
-    int daya;
+    double daya;
     String status;
 
-    public SmartDevice(String id, String nama, Double daya2, String statusAwal){
+    public SmartDevice(String id, String nama, double daya, String statusAwal){
         this.id=id;
         this.nama=nama;
+        this.daya=daya;
         this.status=statusAwal;
     }
     public String getId() {
@@ -17,7 +18,7 @@ public abstract class SmartDevice {
     public String getNama() {
         return nama;
     }
-    public int getDaya() {
+    public double getDaya() {
         return daya;
     }
     public String getStatus() {
@@ -27,5 +28,5 @@ public abstract class SmartDevice {
         this.status = status;
     }
 
-    abstract String getDeviceDetails();
+    public abstract String getDeviceDetails();
 }

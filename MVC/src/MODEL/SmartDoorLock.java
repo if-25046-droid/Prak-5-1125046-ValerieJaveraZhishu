@@ -21,11 +21,6 @@ public class SmartDoorLock extends SmartDevice implements Lockable {
     public String getPin() {
         return pin;
     }
-
-    public void setPin(String pin) {
-        this.pin = pin;
-    }
-
     @Override
     public String getDeviceDetails() {
         return "Smart TV [" + getNama() + "] (ID: " + getId() + ") - Daya: " + getDaya() +

@@ -3,16 +3,16 @@ package VIEW;
 import java.util.Scanner;
 
 public class Util {
-    public static String geString( Scanner Scanner){
-        return Scanner.nextLine();
+    public static String getString( Scanner scanner){
+        return scanner.nextLine();
     }
 
-    public static int getInt( Scanner Scanner){
-        return Integer.parseInt(Scanner.nextLine());
+    public static int getInt( Scanner scanner){
+        return Integer.parseInt(scanner.nextLine());
     }
 
-    public static Double getDouble( Scanner Scanner){
-        return Double.parseDouble(Scanner.nextLine());
+    public static Double getDouble( Scanner scanner){
+        return Double.parseDouble(scanner.nextLine());
     }
 }
  

@@ -1,36 +1,48 @@
 package MODEL;
 
-public class SmartSpeaker extends SmartDevice implements Switchable,Connectable {
+public class SmartSpeaker extends SmartDevice implements Switchable, Connectable {
     private int volume;
     private ConnectionType connectionType;
 
-    public SmartSpeaker(String id, String nama, Double daya, int volume){
+    public SmartSpeaker(String id, String nama, double daya, int volume, ConnectionType connectionType) {
         super(id, nama, daya, "Mati");
-        this.volume=volume;
-        this.connectionType= ConnectionType.NONE;
+        this.volume = volume;
+        this.connectionType = connectionType;
     }
 
-    @Override 
-    public void turnOn(){
+    public int getVolume() {
+        return volume;
+    }
+
+    public ConnectionType getConnectionType() {
+        return connectionType;
+    }
+
+    @Override
+    public void turnOn() {
         setStatus("Menyala");
     }
-    @Override 
-    public void turnOff(){
+
+    @Override
+    public void turnOff() {
         setStatus("Mati");
     }
-    @Override 
-    public void Connect(ConnectionType Type){
-        this.connectionType=Type;
+
+    @Override
+    public void Connect() {
+        System.out.println("Smart Tv Berhasil Terhubung");
     }
-    @Override 
-    public void disconnect(){
-        this.connectionType=ConnectionType.NONE;        
+
+    @Override
+    public void disconnect() {
+        System.out.println("Smart Tv Berhasil Tidak Terhubung");
     }
 
     @Override
     public String getDeviceDetails() {
-        return "Smart TV [" + getNama() + "] (ID: " + getId() + ") - Daya: " + getDaya() + 
-               "W | Status: " + getStatus() + " | Koneksi: " + connectionType + 
+        return "Smart TV [" + getNama() + "] (ID: " + getId() + ") - Daya: " + getDaya() +
+                "W | Status: " + getStatus() + " | Koneksi: " + connectionType +
                 " | Volume: " + volume;
     }
+
 }
